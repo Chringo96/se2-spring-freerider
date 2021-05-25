@@ -1,0 +1,21 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.4.6)
+
+2021-05-25 03:43:47.725  INFO 298 --- [           main] de.freerider.Application                 : Starting Application v0.0.1-SNAPSHOT using Java 14.0.2 on DESKTOP-0EGUENT with PID 298 (/mnt/c/Users/Chringo/se2/se2-spring-freerider/target/customer-manager-0.0.1-SNAPSHOT.jar started by chris in /mnt/c/Users/Chringo/se2/se2-spring-freerider)
+2021-05-25 03:43:47.727  INFO 298 --- [           main] de.freerider.Application                 : No active profile set, falling back to default profiles: default
+2021-05-25 03:43:48.742  INFO 298 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-05-25 03:43:48.753  INFO 298 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-05-25 03:43:48.754  INFO 298 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2021-05-25 03:43:48.840  INFO 298 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-05-25 03:43:48.841  INFO 298 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1060 ms
+2021-05-25 03:43:49.188  INFO 298 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-05-25 03:43:49.198  INFO 298 --- [           main] de.freerider.Application                 : Started Application in 1.912 seconds (JVM running for 2.32)
+2021-05-25 03:43:55.324  INFO 298 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-25 03:43:55.324  INFO 298 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-05-25 03:43:55.325  INFO 298 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms

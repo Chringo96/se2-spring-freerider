@@ -26,7 +26,7 @@ public Customer(String lastName, String firstName, String contact){
     public String getId() {
 	return id;
 }
-
+// Anmerkung: Es wurde gesagt ALLE Attribute sollen einen getter/setter bekommen
 public void setId(String id) {
 	this.id = id;
 }

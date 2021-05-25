@@ -1,0 +1,33 @@
+.:
+total 44
+drwxrwxrwx 1 chris chris  4096 May 25 03:21 .
+drwxrwxrwx 1 chris chris  4096 May 21 13:55 ..
+-rwxrwxrwx 1 chris chris  1267 May 25 03:21 .classpath
+drwxrwxrwx 1 chris chris  4096 May 25 03:07 .git
+-rwxrwxrwx 1 chris chris    37 May 21 15:07 .gitignore
+drwxrwxrwx 1 chris chris  4096 May 21 11:51 .mvn
+-rwxrwxrwx 1 chris chris   572 May 25 03:20 .project
+drwxrwxrwx 1 chris chris  4096 May 25 03:21 .settings
+-rwxrwxrwx 1 chris chris  1105 May 21 11:51 HELP.md
+-rwxrwxrwx 1 chris chris   688 May 25 03:44 find_src.txt
+-rwxrwxrwx 1 chris chris     0 May 25 03:44 ls_la.txt
+-rwxrwxrwx 1 chris chris 10070 May 21 11:51 mvnw
+-rwxrwxrwx 1 chris chris  6608 May 21 11:51 mvnw.cmd
+-rwxrwxrwx 1 chris chris  2113 May 21 11:51 pom.xml
+-rwxrwxrwx 1 chris chris  2277 May 25 03:43 spring_log.txt
+drwxrwxrwx 1 chris chris  4096 May 21 11:51 src
+drwxrwxrwx 1 chris chris  4096 May 25 03:42 target
+
+target:
+total 16700
+drwxrwxrwx 1 chris chris     4096 May 25 03:42 .
+drwxrwxrwx 1 chris chris     4096 May 25 03:21 ..
+drwxrwxrwx 1 chris chris     4096 May 21 13:55 classes
+-rwxrwxrwx 1 chris chris 17086637 May 25 03:42 customer-manager-0.0.1-SNAPSHOT.jar
+-rwxrwxrwx 1 chris chris     9395 May 25 03:42 customer-manager-0.0.1-SNAPSHOT.jar.original
+drwxrwxrwx 1 chris chris     4096 May 21 13:55 generated-sources
+drwxrwxrwx 1 chris chris     4096 May 21 13:56 generated-test-sources
+drwxrwxrwx 1 chris chris     4096 May 21 13:56 maven-archiver
+drwxrwxrwx 1 chris chris     4096 May 21 13:55 maven-status
+drwxrwxrwx 1 chris chris     4096 May 21 14:17 surefire-reports
+drwxrwxrwx 1 chris chris     4096 May 21 13:56 test-classes
