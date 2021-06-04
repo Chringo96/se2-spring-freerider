@@ -61,6 +61,17 @@ class CustomerTests {
 	//deleteAll(Iterable<? extends Customer> entities) test
 	carSharing.deleteAll(liste);
 	System.out.println("Sollte 0 ausgeben:"+ carSharing.count() );
+	
+	carSharing.saveAll(liste);
+	
+	//existsbyId
+	System.out.println("Sollte TRUE sein: "+ carSharing.existsById(schmidt.getId()));
+	System.out.println("Sollte False sein: "+ carSharing.existsById("77889sada"));
+	
+	// AUFGABE 8
+	System.out.println("Wieviele Objekete:"+ carSharing.count() );
+	carSharing.save(muller);
+	System.out.println("Wieviele Objekete nach doppelterm Muller:"+ carSharing.count() );
 }
 	
 	
