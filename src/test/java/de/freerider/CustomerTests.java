@@ -1,78 +1,136 @@
 package de.freerider;
 
-import java.util.ArrayList;
 
-import de.freerider.model.*;
-import de.freerider.repository.*;
 
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import de.freerider.model.Customer;
+import de.freerider.model.Customer.Status;
+
+@SpringBootTest
 class CustomerTests {
 	
-	public static void main (String[] args) {
-	Customer muller= new Customer("Muller", "Chris","chrismuller3@gmx.de" );
-	Customer holly= new Customer("Holly", "Pony","ponyholly6@gmx.de" );
-	Customer eva= new Customer("Eva", "Erika","erieva@gmx.de" );
-	Customer schmidt= new Customer("Schmidt", "Horst","schmidt7@gmail.de" );
-	Customer grobian= new Customer("Grobian", "Gerard","grobger@hotmail.com");
-	
-	
-	ArrayList<Customer> liste = new ArrayList<>();
-	liste.add(muller);
-	liste.add(holly);
-	liste.add(eva);
-	liste.add(schmidt);
-	liste.add(grobian);
-	CustomerRepository carSharing = new CustomerRepository();
-	
-	//save test
-		carSharing.save(muller);
-		carSharing.save(holly);
-	//count test
-	System.out.println("count funktioniert + Zwei Objekte sollte drinne sein:  "+ carSharing.count());
-	
-	// deletebyId test
-	carSharing.deleteById(muller.getId());
-	
-	System.out.println("Ein Objekt "+ carSharing.count());
-	
-//	Delete test
-	carSharing.delete(holly);
-	
-	System.out.println("Sollte 0 sein: " +carSharing.count());
-	// SaveAll Test
-	carSharing.saveAll(liste);
-	System.out.println("5 Objekte sollten drinne sein:  "+ carSharing.count());
+private Customer mats;
+private Customer thomas;
 
-	
-	//DeleteAll Test
-	carSharing.deleteAll();
-	System.out.println("Sollte 0 ausgeben:"+ carSharing.count() );
-	
-	carSharing.saveAll(liste);
-	//DelteById test
-	carSharing.deleteById(eva.getId());
-	System.out.println("Sollte 4 ausgeben:"+ carSharing.count() );
-	//DeleteAllById Test
-	ArrayList<String> idTest = new ArrayList<>();
-	idTest.add(muller.getId());
-	idTest.add(grobian.getId());
-	carSharing.deleteAllById(idTest);
-	System.out.println("Sollte 2 ausgeben:"+ carSharing.count() );
-	
-	//deleteAll(Iterable<? extends Customer> entities) test
-	carSharing.deleteAll(liste);
-	System.out.println("Sollte 0 ausgeben:"+ carSharing.count() );
-	
-	carSharing.saveAll(liste);
-	
-	//existsbyId
-	System.out.println("Sollte TRUE sein: "+ carSharing.existsById(schmidt.getId()));
-	System.out.println("Sollte False sein: "+ carSharing.existsById("77889sada"));
-	
-	// AUFGABE 8
-	System.out.println("Wieviele Objekete:"+ carSharing.count() );
-	carSharing.save(muller);
-	System.out.println("Wieviele Objekete nach doppelterm Muller:"+ carSharing.count() );
+
+public CustomerTests() {
 }
+
+@BeforeEach
+public void setUpEach() {
+	mats = new Customer("Matsenstein", "Mats","Matsen97@web.de" );
+	thomas = new Customer("Anders", "Thomas", "moderntom@gmx.de" );
+}
+
+
+@Test
+void testIdNull() {
+	assertNull(mats.getId());
+	assertNull(thomas.getId());
+}
+
+@Test
+void testSetId() {
+	mats.setId("A231");
+	assertNotNull(mats.getId());
+}
+
+@Test
+void testSetIdOnlyOnce() {
+	mats.setId("A222");
+	assertNotNull(mats.getId());
+	mats.setId("N100");
+	assertEquals(mats.getId(), "A222");
+}
+
+@Test
+void testResetId() {
+	mats.setId("newId");
+	mats.setId(null);
+	assertNull(mats.getId());
+}
+
+@Test
+void testNamesInitial() {
+	assertNotNull(mats.getFirstName(), mats.getLastName());
+	assertNotNull(thomas.getFirstName(), thomas.getLastName());
+}
+
+@Test
+void testNamesSetNull() {
+	mats.setFirstName(null);
+	mats.setLastName(null);
+	assertEquals(mats.getFirstName(),"");
+	assertEquals(mats.getLastName(),"");
+}
+
+@Test
+void testSetNames() {
+	mats.setFirstName("Heinrich");
+	mats.setLastName("Heinrichsen");
+	assertEquals(mats.getFirstName(),"Heinrich");
+	assertEquals(mats.getLastName(), "Heinrichsen");
 	
-	
+}
+
+@Test
+void testContactsInitial() {
+	assertNotNull(mats.getContact());
+	assertNotNull(thomas.getContact());
+}
+
+@Test
+void testContactsSetNull() {
+	mats.setContact(null);
+	assertEquals(mats.getContact(),"");
+}
+
+@Test
+void testSetContact() {
+	mats.setContact("Silvio Zahn");
+	assertEquals(mats.getContact(),"Silvio Zahn");
+}
+
+@Test
+void testStatusInitial() {
+	assertEquals(mats.getStatus(),Customer.Status.New);
+}
+
+@Test
+void testSetStatus() {
+	mats.setStatus(Status.Active);
+	assertEquals(mats.getStatus(),Customer.Status.Active);
+	mats.setStatus(Status.Deleted);
+	assertEquals(mats.getStatus(),Customer.Status.Deleted);
+	mats.setStatus(Status.InRegistration);
+	assertEquals(mats.getStatus(),Customer.Status.InRegistration);
+	mats.setStatus(Status.Suspended);
+	assertEquals(mats.getStatus(),Customer.Status.Suspended);
+	mats.setStatus(Status.New);
+	assertEquals(mats.getStatus(),Customer.Status.New);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

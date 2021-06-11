@@ -28,7 +28,8 @@ public Customer(String lastName, String firstName, String contact){
 }
 // Anmerkung: Es wurde gesagt ALLE Attribute sollen einen getter/setter bekommen
 public void setId(String id) {
-	this.id = id;
+	if(this.id == null || id == null)
+		this.id = id;
 }
 
 public String getLastName() {
@@ -36,7 +37,10 @@ public String getLastName() {
 }
 
 public void setLastName(String lastName) {
-	this.lastName = lastName;
+	if(lastName != null)
+		this.lastName = lastName;
+	else
+		this.lastName = "";
 }
 
 public String getFirstName() {
@@ -44,7 +48,10 @@ public String getFirstName() {
 }
 
 public void setFirstName(String firstName) {
-	this.firstName = firstName;
+	if(firstName!=  null)
+		this.firstName = firstName;
+	else
+		this.firstName = "";
 }
 
 public String getContact() {
@@ -52,7 +59,10 @@ public String getContact() {
 }
 
 public void setContact(String contact) {
-	this.contact = contact;
+	if(contact != null)
+		this.contact = contact;
+	else
+		this.contact = "";
 }
 
 public Status getStatus() {
