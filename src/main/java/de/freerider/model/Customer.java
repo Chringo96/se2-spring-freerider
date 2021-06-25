@@ -1,5 +1,7 @@
 package de.freerider.model;
 
+import de.freerider.repository.IDGenerator;
+
 public class Customer{
 
 private String id;
@@ -16,9 +18,9 @@ public enum Status{
 }
 
 public Customer(String lastName, String firstName, String contact){
-        this.lastName = lastName;
-        this.firstName = firstName;
-        this.contact = contact;
+		setLastName(lastName);
+		setFirstName(firstName);
+		setContact(contact);
         id = null;
         status = Status.New;
     }
@@ -27,10 +29,14 @@ public Customer(String lastName, String firstName, String contact){
 	return id;
 }
 // Anmerkung: Es wurde gesagt ALLE Attribute sollen einen getter/setter bekommen
-public void setId(String id) {
-	if(this.id == null || id == null)
+public void setId(String id)  {
+
+	if(this.id == null || id == null )
 		this.id = id;
-}
+	
+		
+	}
+
 
 public String getLastName() {
 	return lastName;
