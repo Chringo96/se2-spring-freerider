@@ -2,7 +2,7 @@ package de.freerider;
 
 import java.util.ArrayList;
 
-import de.freerider.model.*;
+import de.freerider.datamodel.Customer;
 import de.freerider.repository.*;
 
 class CustomerTestsOldC3 {

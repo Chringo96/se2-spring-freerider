@@ -1,9 +1,6 @@
 package de.freerider;
 
-<<<<<<< HEAD
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-=======
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -15,15 +12,11 @@ import org.springframework.context.event.EventListener;
 import de.freerider.datamodel.Customer;
 import de.freerider.repository.CrudRepository;
 
->>>>>>> sgra64/datasource
 
 @SpringBootApplication
 public class Application {
 
-<<<<<<< HEAD
-	public static void main(String[] args) {
-		SpringApplication.run(Application.class, args);
-=======
+
 	@Autowired
 	private CrudRepository<Customer,String> customerRepository;
 
@@ -77,7 +70,6 @@ public class Application {
 
 	public static void log( String msg ) {
 		//System.err.println( Application.class.getSimpleName() + "::" + msg );
->>>>>>> sgra64/datasource
 	}
 
 }

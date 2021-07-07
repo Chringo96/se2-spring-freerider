@@ -1,4 +1,4 @@
-package de.freerider;
+package de.freerider.datamodel;
 
 
 
@@ -8,8 +8,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import de.freerider.model.Customer;
-import de.freerider.model.Customer.Status;
+import de.freerider.datamodel.Customer;
+import de.freerider.datamodel.Customer.Status;
 
 @SpringBootTest
 class CustomerTests {

@@ -1,79 +1,82 @@
 package de.freerider.datamodel;
 
 
-public class Customer {
-	//
-	private String id = null;
-	//
-	private String lastName;
-	//
-	private String firstName;
-	//
-	private String contact;
-	//
-	public enum Status { New, InRegistration, Active, Suspended, Deleted };
-	private Status status = Status.New;
+public class Customer{
 
+private String id;
+private String lastName;
+private String firstName;
+private String contact;
+private  Status status;
+public enum Status{
+	New,
+	InRegistration,
+	Active,
+	Suspended,
+	Deleted;
+}
 
-	/**
-	 * Public constructor.
-	 * 
-	 * @param lastName value of lastName attribute, null allowed -> ""
-	 * @param firstName value of firstName attribute, null allowed -> ""
-	 * @param contact value of contact attribute, null allowed -> ""
-	 */
-	public Customer( String lastName, String firstName, String contact ) {
-		setLastName( lastName );
-		setFirstName( firstName );
-		setContact( contact );
+public Customer(String lastName, String firstName, String contact){
+		setLastName(lastName);
+		setFirstName(firstName);
+		setContact(contact);
+        id = null;
+        status = Status.New;
+    }
+
+    public String getId() {
+	return id;
+}
+// Anmerkung: Es wurde gesagt ALLE Attribute sollen einen getter/setter bekommen
+public void setId(String id)  {
+
+	if(this.id == null || id == null )
+		this.id = id;
+	
+		
 	}
 
 
-	public String getId() {
-		return id;
-	}
+public String getLastName() {
+	return lastName;
+}
 
-	/**
-	 * Set id attribute only if current id is null or reset id to null.
-	 * Does not alter non-null id values.
-	 * 
-	 * @param id to set; null resets id, non-null id only set when this.id == null
-	 */
-	public void setId( final String id ) {
-		if( this.id == null || id == null ) {	// set id only once or reset to null
-			this.id = id;
-		}
-	}
+public void setLastName(String lastName) {
+	if(lastName != null)
+		this.lastName = lastName;
+	else
+		this.lastName = "";
+}
 
-	public String getLastName() {
-		return lastName;
-	}
+public String getFirstName() {
+	return firstName;
+}
 
-	public void setLastName( String lastName ) {
-		this.lastName = lastName == null? "" : lastName;
-	}
+public void setFirstName(String firstName) {
+	if(firstName!=  null)
+		this.firstName = firstName;
+	else
+		this.firstName = "";
+}
 
-	public String getFirstName() {
-		return firstName;
-	}
+public String getContact() {
+	return contact;
+}
 
-	public void setFirstName( String firstName ) {
-		this.firstName = firstName == null? "" : firstName;
-	}
+public void setContact(String contact) {
+	if(contact != null)
+		this.contact = contact;
+	else
+		this.contact = "";
+}
 
-	public String getContact() {
-		return contact;
-	}
+public Status getStatus() {
+	return status;
+}
 
-	public void setContact( String contact ) {
-		this.contact = contact == null? "" : contact;
-	}
+public void setStatus(Status status) {
+	this.status = status;
+}
 
-	public Status getStatus() {
-		return status;
-	}
-
-	public void setStatus( Status status ) {
-		this.status = status;
-	}
+	
 }

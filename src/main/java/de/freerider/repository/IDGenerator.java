@@ -13,11 +13,8 @@ package de.freerider.repository;
  * @author sgra64
  *
  */
-<<<<<<< HEAD
-public class IDGenerator {
-=======
+
 class IDGenerator {
->>>>>>> sgra64/datasource
 	private final String prefix;
 	private final int len;
 	private final String alphabet;
